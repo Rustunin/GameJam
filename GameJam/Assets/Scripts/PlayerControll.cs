@@ -25,11 +25,11 @@ public class PlayerControll : MonoBehaviour
         groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (groundedPlayer && velocity.y < 0)
         {
-            velocity.y =-2f;
+            velocity.y = -2f;
         }
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Vector3 move = transform.right*x+transform.forward*y;
+        Vector3 move = transform.right * x + transform.forward * y;
         controller.Move(move * playerSpeed * Time.deltaTime);
 
 
