@@ -12,11 +12,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultValue = 0.5f;
     [SerializeField] private GameObject ComfirmationPromt=null;
+
     [Header("Level to Load")]
+
     public string NewGameLeveltext;
     private string LeveltoLoad;
-    [SerializeField]
-    private GameObject noSavedGameDialog = null;
+
+    [SerializeField] private GameObject noSavedGameDialog = null;
     private void Awake()
     {
         volumeSlider.value= PlayerPrefs.GetFloat("masterVolume");
@@ -57,6 +59,7 @@ public class MenuController : MonoBehaviour
             AudioListener.volume = defaultValue;
             volumeSlider.value = defaultValue;
             volumeTextValue.text = defaultValue.ToString("0.0");
+            VolumeApply();
         }
     }
     public void VolumeApply()
