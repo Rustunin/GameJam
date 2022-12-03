@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerControll : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class PlayerControll : MonoBehaviour
     public float groundDistance;
     public LayerMask groundMask;
 
-    private float playerSpeed = 10.0f;
+    private float playerSpeed = 20.0f;
     private float jumpHeight = 8.0f;
     private float gravityValue = -9.81f;
     public Transform groundCheck;
+    public static bool changePos = false;
     Vector3 velocity;
 
     private void Start()
@@ -22,6 +24,13 @@ public class PlayerControll : MonoBehaviour
 
     void Update()
     {
+        if (changePos)
+        {
+            controller.enabled = false;
+            transform.position = new Vector3(858, 228, 906);
+            controller.enabled = true;
+            changePos = false;
+        }
         groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (groundedPlayer && velocity.y < 0)
         {
