@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 7bedd9ef2b5a7f8418560ccfcba094c0
   - enabled: 1
-    path: Assets/Scenes/hydra.unity
-    guid: a3f1151ea5a7f6f459bf2a0ba783de98
+    path: Assets/Scenes/Cave.unity
+    guid: f8ad4553ad4ce5843b337a1d0519d882
   m_configObjects: {}

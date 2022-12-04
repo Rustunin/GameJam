@@ -7,10 +7,8 @@ public class TRIGGERTONEWMIR : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (transform.tag == "pechera")
-        {
-            PlayerControll.changePos = true;
-            Debug.Log("da");
-        }
+        SceneManager.LoadScene("Cave");
+        PlayerControll.playerSpeed = 2f;
+        PlayerControll.jumpHeight = 2f;
     }
 }

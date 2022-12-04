@@ -10,8 +10,8 @@ public class PlayerControll : MonoBehaviour
     public float groundDistance;
     public LayerMask groundMask;
 
-    private float playerSpeed = 20.0f;
-    private float jumpHeight = 8.0f;
+    [SerializeField]public static float playerSpeed = 20.0f;
+    public static float jumpHeight = 8.0f;
     private float gravityValue = -9.81f;
     public Transform groundCheck;
     public static bool changePos = false;
