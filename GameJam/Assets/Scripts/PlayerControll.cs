@@ -10,6 +10,10 @@ public class PlayerControll : MonoBehaviour
     public float groundDistance;
     public LayerMask groundMask;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     [SerializeField]public static float playerSpeed = 20.0f;
     public static float jumpHeight = 8.0f;
     private float gravityValue = -9.81f;
@@ -20,10 +24,16 @@ public class PlayerControll : MonoBehaviour
     private void Start()
     {
         controller=GetComponent<CharacterController>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeDamage(20);
+        }
         if (changePos)
         {
             controller.enabled = false;
@@ -50,5 +60,10 @@ public class PlayerControll : MonoBehaviour
 
         velocity.y += gravityValue * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }
