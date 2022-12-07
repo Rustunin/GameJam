@@ -9,25 +9,16 @@ public class PlayerControll : MonoBehaviour
     private bool groundedPlayer;
     public float groundDistance;
     public LayerMask groundMask;
-    private Animator animator;
-
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
-
     [SerializeField]public static float playerSpeed = 8.0f;
     public static float jumpHeight = 8.0f;
     private float gravityValue = -9.81f;
     public Transform groundCheck;
-    public static bool changePos = false;
     Vector3 velocity;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         controller=GetComponent<CharacterController>();
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+
     }
 
     void Update()
@@ -46,15 +37,9 @@ public class PlayerControll : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            TakeDamage(20);
+            
         }
-        if (changePos)
-        {
-            controller.enabled = false;
-            transform.position = new Vector3(858, 228, 906);
-            controller.enabled = true;
-            changePos = false;
-        }
+
         groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (groundedPlayer && velocity.y < 0)
         {
@@ -64,17 +49,13 @@ public class PlayerControll : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * y;
         controller.Move(move * playerSpeed * Time.deltaTime);
-        animator.SetFloat("speed", Vector3.ClampMagnitude(move, 1).magnitude);
+
 
         // Changes the height position of the player..
       
 
         velocity.y += gravityValue * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-        }
+      
     }
 }

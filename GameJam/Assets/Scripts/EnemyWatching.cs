@@ -6,7 +6,7 @@ public class EnemyWatching : MonoBehaviour
 {
     public GameObject player;
     public Vector3 dir;
-
+    public static Vector3 dirr;
 
     void Update()
     {
@@ -15,5 +15,6 @@ public class EnemyWatching : MonoBehaviour
         dir = targetPos - (Vector3)transform.position;
 
         transform.forward = dir;
+        dirr = transform.forward;
     }
 }
