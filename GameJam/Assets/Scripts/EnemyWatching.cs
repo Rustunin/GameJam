@@ -6,12 +6,8 @@ public class EnemyWatching : MonoBehaviour
 {
     public GameObject player;
     public Vector3 dir;
-    private Animator animator;
+    public static Vector3 dirr;
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
     void Update()
     {
         Vector3 targetPos = player.transform.position;
@@ -19,5 +15,6 @@ public class EnemyWatching : MonoBehaviour
         dir = targetPos - (Vector3)transform.position;
 
         transform.forward = dir;
+        dirr = transform.forward;
     }
 }
