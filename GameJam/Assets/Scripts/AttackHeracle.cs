@@ -38,8 +38,8 @@ public class AttackHeracle : MonoBehaviour
         GameObject GO1 = Instantiate(fireBall, fireballpos1.position, Quaternion.identity);
         GameObject GO2 = Instantiate(fireBall, fireballpos2.position, Quaternion.identity);
         GameObject GO3 = Instantiate(fireBall, fireballpos3.position, Quaternion.identity);
-        GO1.GetComponent<Rigidbody>().AddForce(transform.forward * 700*Time.deltaTime, ForceMode.Impulse);
-        GO2.GetComponent<Rigidbody>().AddForce(transform.forward * 700*Time.deltaTime, ForceMode.Impulse);
-        GO3.GetComponent<Rigidbody>().AddForce(transform.forward * 700*Time.deltaTime, ForceMode.Impulse);
+        GO1.GetComponent<Rigidbody>().AddForce(transform.forward * 700 * Time.deltaTime, ForceMode.Impulse);
+        GO2.GetComponent<Rigidbody>().AddForce(transform.forward * 700 * Time.deltaTime, ForceMode.Impulse);
+        GO3.GetComponent<Rigidbody>().AddForce(transform.forward * 700 * Time.deltaTime, ForceMode.Impulse);
     }
 }
