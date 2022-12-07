@@ -9,6 +9,7 @@ public class PlayerControll : MonoBehaviour
     private bool groundedPlayer;
     public float groundDistance;
     public LayerMask groundMask;
+    private Animator animator;
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -23,6 +24,7 @@ public class PlayerControll : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         controller=GetComponent<CharacterController>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -62,7 +64,7 @@ public class PlayerControll : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * y;
         controller.Move(move * playerSpeed * Time.deltaTime);
-
+        animator.SetFloat("speed", Vector3.ClampMagnitude(move, 1).magnitude);
 
         // Changes the height position of the player..
       
