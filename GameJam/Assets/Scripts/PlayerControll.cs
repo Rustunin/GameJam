@@ -14,7 +14,7 @@ public class PlayerControll : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
-    [SerializeField]public static float playerSpeed = 20.0f;
+    [SerializeField]public static float playerSpeed = 8.0f;
     public static float jumpHeight = 8.0f;
     private float gravityValue = -9.81f;
     public Transform groundCheck;
@@ -30,6 +30,18 @@ public class PlayerControll : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        {
+            velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            playerSpeed *= 2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            playerSpeed = 8f;
+        }
         if (Input.GetKeyDown(KeyCode.F))
         {
             TakeDamage(20);
@@ -53,10 +65,7 @@ public class PlayerControll : MonoBehaviour
 
 
         // Changes the height position of the player..
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        }
+      
 
         velocity.y += gravityValue * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

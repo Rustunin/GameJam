@@ -5,14 +5,9 @@ using UnityEngine;
 public class EnemyWatching : MonoBehaviour
 {
     public GameObject player;
-
     public Vector3 dir;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
     void Update()
     {
         Vector3 targetPos = player.transform.position;
