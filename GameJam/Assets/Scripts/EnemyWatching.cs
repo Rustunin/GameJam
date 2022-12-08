@@ -10,6 +10,10 @@ public class EnemyWatching : MonoBehaviour
 
     void Update()
     {
+        if (player==null)
+        {
+            return;
+        }
         Vector3 targetPos = player.transform.position;
 
         dir = targetPos - (Vector3)transform.position;

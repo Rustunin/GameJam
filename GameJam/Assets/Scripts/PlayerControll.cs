@@ -16,6 +16,9 @@ public class PlayerControll : MonoBehaviour
     Vector3 velocity;
     private Animator animator;
 
+    public Transform spawnPoint;
+    public GameObject swordImage;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,6 +28,14 @@ public class PlayerControll : MonoBehaviour
 
     void Update()
     {
+        if (menu2.isRestart)
+        {
+            controller.enabled = false;
+            gameObject.transform.position = spawnPoint.position;
+            controller.enabled = true;  
+            menu2.isRestart = false;
+            swordImage.SetActive(true);           
+        }
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
             velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
@@ -36,11 +47,7 @@ public class PlayerControll : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             playerSpeed = 8f;
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            
-        }
+        }       
 
         groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (groundedPlayer && velocity.y < 0)

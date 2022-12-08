@@ -24,14 +24,14 @@ public class TRIGGERTONEWMIR : MonoBehaviour
         }
         if (transform.tag=="wayToDragon")
         {
-            AttackHeracle.OnRange = true;
+           
         }     
     }
     private void OnTriggerExit(Collider other)
     {
         if (transform.tag=="wayToDragon")
         {
-            AttackHeracle.OnRange = false;
+            
         }
     }
 }

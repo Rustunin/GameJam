@@ -27,6 +27,7 @@ public class MenuController : MonoBehaviour
     public void NewGameLoad()
     {
         SceneManager.LoadScene(NewGameLeveltext);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void LoadGameDialogYes()

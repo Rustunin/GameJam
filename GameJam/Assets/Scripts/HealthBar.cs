@@ -14,6 +14,11 @@ public class HealthBar : MonoBehaviour
     public HealthBar healthBar;
     public static bool heatltake;
     int takehealth;
+
+    //canvas
+    public GameObject RestartMenu;
+    public GameObject swordObj;
+    public GameObject ghidorahCanvas;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -39,6 +44,10 @@ public class HealthBar : MonoBehaviour
     
     private void Update()
     {
+        if (menu2.isRestart)
+        {
+            currentHealth = maxHealth; 
+        }
         SetHealth(currentHealth);
         if (heatltake)
         {
@@ -47,7 +56,13 @@ public class HealthBar : MonoBehaviour
         }
         if (currentHealth<=0)
         {
-
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;           
+            ghidorahCanvas.SetActive(false);
+            RestartMenu.SetActive(true);
+            swordObj.SetActive(false);         
+            currentHealth = 100;
+            
         }
 
     }
