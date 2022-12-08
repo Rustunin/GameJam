@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackHeracle : MonoBehaviour
 {
-    public GameObject Heracle;
     public GameObject fireBall;
     public Transform fireballpos1;
     public Transform fireballpos2;
@@ -30,7 +29,7 @@ public class AttackHeracle : MonoBehaviour
             cooldown -= Time.deltaTime;
             if (cooldown <= 0)
             {
-                if (Vector3.Distance(transform.position, Heracle.transform.position) < DistanceHeracle)
+                if (Vector3.Distance(transform.position, Target.transform.position) < DistanceHeracle)
                 {
                     dir1 = (Target.transform.position + offset) - fireballpos1.transform.position;
                     dir2 = (Target.transform.position + offset) - fireballpos1.transform.position;

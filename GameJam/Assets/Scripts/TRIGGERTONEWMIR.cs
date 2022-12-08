@@ -10,6 +10,8 @@ public class TRIGGERTONEWMIR : MonoBehaviour
     {
         if (transform.tag == "Cave")
         {
+            PlayerControll.playerSpeed = 3f;
+            PlayerControll.jumpHeight = 1.25f;
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 PlayerControll.playerSpeed *= 2;
@@ -19,8 +21,6 @@ public class TRIGGERTONEWMIR : MonoBehaviour
                 PlayerControll.playerSpeed = 3f;
             }
             SceneManager.LoadScene("Cave");
-            PlayerControll.playerSpeed = 3f;
-            PlayerControll.jumpHeight = 1.25f;
         }
         if (transform.tag=="wayToDragon")
         {
