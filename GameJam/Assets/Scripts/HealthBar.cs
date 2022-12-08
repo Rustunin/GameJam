@@ -36,6 +36,7 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth -= damagge;
     }
+    
     private void Update()
     {
         SetHealth(currentHealth);
@@ -43,7 +44,11 @@ public class HealthBar : MonoBehaviour
         {
             TakeDAMAGE(20);
             heatltake = false;
-        } 
+        }
+        if (currentHealth<=0)
+        {
+
+        }
 
     }
 }

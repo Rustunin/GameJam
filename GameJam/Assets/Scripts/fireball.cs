@@ -11,9 +11,6 @@ public class fireball : MonoBehaviour
         {
             HealthBar.heatltake = true;
         }
-    }
-    private void Update()
-    {
-        Destroy(gameObject,timeToDestroy);
+        Destroy(gameObject);
     }
 }
