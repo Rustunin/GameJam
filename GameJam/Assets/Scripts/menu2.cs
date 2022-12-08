@@ -15,6 +15,8 @@ public class menu2 : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Menu");
+        Time.timeScale = 1;
+        attackEnemy.animWalkcount = 0;
     }
     public void Restart()
     {

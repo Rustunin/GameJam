@@ -18,15 +18,31 @@ public class PlayerControll : MonoBehaviour
 
     public Transform spawnPoint;
     public GameObject swordImage;
-
+    Vector3 zeronull;
+    public AudioSource footsound;
     private void Start()
     {
+        zeronull = Vector3.zero;
         animator = GetComponent<Animator>();
         controller=GetComponent<CharacterController>();
 
     }
 
-    void Update()
+    
+//         if(!footsound.isPlaying)
+//         {
+//             footsound.Play();
+//             footsound.loop = true;
+//         }
+//     }
+
+
+//     else
+//{
+//    footsound.Stop();
+
+//}
+void Update()
     {
         if (menu2.isRestart)
         {
@@ -57,8 +73,29 @@ public class PlayerControll : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * y;
+        float Ismoving = Vector3.ClampMagnitude(move, 1).magnitude;
         controller.Move(move * playerSpeed * Time.deltaTime);
-        animator.SetFloat("speed", Vector3.ClampMagnitude(move, 1).magnitude);
+          if (Ismoving>=0.1f)
+          {
+             if (!footsound.isPlaying)
+             {
+                footsound.Play();
+                footsound.loop = true;
+             }
+        }
+        else
+        {
+            footsound.Stop();
+        }
+        if (attackEnemy.animWalkcount==0)
+        {
+            animator.SetFloat("speed", Vector3.ClampMagnitude(move, 1).magnitude);
+        }
+        else if (attackEnemy.animWalkcount == 1)
+        {
+            animator.SetFloat("speed", Vector3.ClampMagnitude(zeronull,1).magnitude);
+        }
+      
 
 
         // Changes the height position of the player..

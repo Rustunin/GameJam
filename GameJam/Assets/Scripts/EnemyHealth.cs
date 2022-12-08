@@ -18,6 +18,10 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Update()
     {
+        if (menu2.isRestart==true)
+        {
+            health = maxHealth;
+        }
         slider.value =CalculateHealth();
         if (health<maxHealth)
         {

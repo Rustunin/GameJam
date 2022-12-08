@@ -46,7 +46,8 @@ public class HealthBar : MonoBehaviour
     {
         if (menu2.isRestart)
         {
-            currentHealth = maxHealth; 
+            currentHealth = maxHealth;
+            menu2.isRestart = false;
         }
         SetHealth(currentHealth);
         if (heatltake)

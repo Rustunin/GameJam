@@ -10,6 +10,7 @@ TagManager:
   - Cave
   - wayToDragon
   - Ghidorah
+  - chestOpen
   layers:
   - Default
   - TransparentFX
