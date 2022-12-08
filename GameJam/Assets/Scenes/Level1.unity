@@ -1789,7 +1789,7 @@ TerrainCollider:
   m_GameObject: {fileID: 1439256883}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 4aaf7d5a2e9dc4643bc899e9574433d3, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 000f5e29116a946488593afd52016e22, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1439256885
 Terrain:
@@ -1800,7 +1800,7 @@ Terrain:
   m_GameObject: {fileID: 1439256883}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 4aaf7d5a2e9dc4643bc899e9574433d3, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 000f5e29116a946488593afd52016e22, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -2802,7 +2802,7 @@ MonoBehaviour:
     m_Bits: 64
   groundCheck: {fileID: 1065798409}
   spawnPoint: {fileID: 0}
-  swordImage: {fileID: 0}
+  swordImage: {fileID: 7787671033768628965, guid: baaf9422d512cd04296e73e81d745f93, type: 3}
   footsound: {fileID: 9103377034530565317}
 --- !u!4 &1229042056959346131
 Transform:
@@ -4652,11 +4652,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ToTarget: 0
-  sword: {fileID: 8077936017551974316}
   Target: {fileID: 0}
   E: {fileID: 2122775746}
   Chest: {fileID: 1111130830}
-  isOpen: 0
   SwordPNG: {fileID: 8077936017551974316}
   Sword3d: {fileID: 4764726256733056746}
   TextTakeSword: {fileID: 639865652}

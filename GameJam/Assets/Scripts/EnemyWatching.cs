@@ -12,6 +12,7 @@ public class EnemyWatching : MonoBehaviour
     {
         if (player==null)
         {
+            Destroy(gameObject);
             return;
         }
         Vector3 targetPos = player.transform.position;
@@ -20,5 +21,7 @@ public class EnemyWatching : MonoBehaviour
 
         transform.forward = dir;
         dirr = transform.forward;
+
+        
     }
 }
