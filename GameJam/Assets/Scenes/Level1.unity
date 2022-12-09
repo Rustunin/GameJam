@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 020f035cc28d3f94b870f8d16f02d822, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44857818, g: 0.31142324, b: 0.32669666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -624,7 +624,7 @@ Camera:
   m_GameObject: {fileID: 499124900}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.07600568, g: 0.14895992, b: 0.26415092, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1406,7 +1406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3ede27434ca00504e8d42f5fc95bc5c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1789,7 +1789,7 @@ TerrainCollider:
   m_GameObject: {fileID: 1439256883}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 96fefbff1a0e5944c91237afa493aeab, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: c2d99f8feb2bd314da508164374ef99d, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1439256885
 Terrain:
@@ -1800,7 +1800,7 @@ Terrain:
   m_GameObject: {fileID: 1439256883}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 96fefbff1a0e5944c91237afa493aeab, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: c2d99f8feb2bd314da508164374ef99d, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -2087,7 +2087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3ede27434ca00504e8d42f5fc95bc5c3, type: 2}
+  - {fileID: -3155047780354543793, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3016,7 +3016,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6551536115862687275}
-  m_Mesh: {fileID: -3676351618392449091, guid: 61196f3117f205d4699b596257751edd, type: 3}
+  m_Mesh: {fileID: -3676351618392449091, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
 --- !u!4 &2572538233662543674
 Transform:
   m_ObjectHideFlags: 0
@@ -3321,10 +3321,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1444460858095362738, guid: 61196f3117f205d4699b596257751edd, type: 3}
-  - {fileID: -3155047780354543793, guid: 61196f3117f205d4699b596257751edd, type: 3}
-  - {fileID: -905690159841262435, guid: 61196f3117f205d4699b596257751edd, type: 3}
-  - {fileID: -1580535799172915004, guid: 61196f3117f205d4699b596257751edd, type: 3}
+  - {fileID: -1444460858095362738, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
+  - {fileID: -3155047780354543793, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
+  - {fileID: -905690159841262435, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3462,8 +3462,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1444460858095362738, guid: 61196f3117f205d4699b596257751edd, type: 3}
-  - {fileID: -3155047780354543793, guid: 61196f3117f205d4699b596257751edd, type: 3}
+  - {fileID: -1444460858095362738, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
+  - {fileID: -3155047780354543793, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3919,7 +3919,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4108167938237172933}
-  m_Mesh: {fileID: -3691051754372521527, guid: 61196f3117f205d4699b596257751edd, type: 3}
+  m_Mesh: {fileID: -3691051754372521527, guid: 79a3d6bd928ad454b810be1ca975f43f, type: 3}
 --- !u!137 &6478636779020798334
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
